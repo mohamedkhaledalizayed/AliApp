@@ -26,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
                 Log.e("data : ", response.body()+"");
                 Log.e("AccountNameAR : ", response.body().getAccountNameAR()+"");
+                Log.e("AccountNameAR : ", response.body().getPortfolioOpeningStocksArray()+"");
+                for (int i = 0; i < response.body().getPortfolioOpeningStocksArray().size(); i++){
+                    Log.e("test", response.body().getPortfolioOpeningStocksArray().get(i).getPartnerNameAR());
+                }
             }
 
             @Override
